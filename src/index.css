@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@supports (font-variation-settings: normal) {
+    @font-face {
+        font-family: "Anybody";
+        font-style: normal;
+        font-display: swap;
+        font-weight: 100 900;
+        src: url("/fonts/anybody-wdth-wght.woff2") format("woff2-variations");
+        font-named-instance: "Regular";
+    }
+
+    @font-face {
+        font-family: "Anybody";
+        font-style: italic;
+        font-weight: 400 900;
+        font-display: swap;
+        src: url("fonts/anybody-italic-wdth-wght.woff2")
+            format("woff2-variations");
+        font-named-instance: "Italic";
+    }
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Permanent Marker";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/permanent-marker.woff2") format("woff2");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.button-container {
+    transform: translate3d(0px, 0px, 0px) scale(1) !important;
+}
+
+.button {
+    position: absolute;
+    top: 5vh;
+    left: 5vh;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    background-color: pink;
+    user-select: none;
+}
+
+.video-container {
+    transform: translate3d(0px, 0px, 0px) !important;
+    pointer-events: none;
+}
+
+.video-container div {
+    transform: translate3d(0px, 0px, 0px) !important;
+    width: 100vw;
+    height: 100svh;
+}
