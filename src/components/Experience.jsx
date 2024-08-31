@@ -48,12 +48,12 @@ const Experience = ({ offset }) => {
                 </Center>
             </motion.group>
 
-            <OrbitControls
+            {/* <OrbitControls
                 enablePan={false}
                 enableZoom={false}
                 minPolarAngle={Math.PI * 0.47}
                 maxPolarAngle={Math.PI * 0.495}
-            />
+            /> */}
         </>
     )
 }
