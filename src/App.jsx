@@ -22,8 +22,7 @@ const App = () => {
     return (
         <ReactLenis root>
             <Canvas
-                onTouchMove={(e) => e.stopPropagation()}
-                className="!fixed !w-screen !h-svh"
+                className="!fixed !w-screen !h-svh touch-none"
                 camera={{
                     position: [0, 5, 100],
                     fov: 55,
