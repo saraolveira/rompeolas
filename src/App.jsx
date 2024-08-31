@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Canvas } from "@react-three/fiber"
+import { ScrollControls } from "@react-three/drei"
 import { useScroll, useMotionValueEvent, useTransform } from "framer-motion"
 import { ReactLenis } from "lenis/react"
 import Experience from "./components/Experience.jsx"
@@ -30,7 +31,9 @@ const App = () => {
                     far: 20000,
                 }}
             >
-                <Experience offset={offset} />
+                <ScrollControls>
+                    <Experience offset={offset} />
+                </ScrollControls>
             </Canvas>
             <Content
                 scrollYProgress={scrollYProgress}
