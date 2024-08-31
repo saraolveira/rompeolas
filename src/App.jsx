@@ -22,7 +22,7 @@ const App = () => {
     return (
         <ReactLenis root>
             <Canvas
-                className="!fixed !w-screen !h-svh touch-none"
+                className="!fixed !w-screen !h-svh"
                 camera={{
                     position: [0, 5, 100],
                     fov: 55,

@@ -3,7 +3,7 @@ import Two from "./Two.jsx"
 
 const Content = ({ scrollYProgress, offset, totalY }) => {
     return (
-        <div className="pointer-events-none">
+        <div className="md:pointer-events-none">
             <One scrollYProgress={scrollYProgress} />
             <Two offset={offset} totalY={totalY} />
             {/* <div className="top-[340svh] left-0 absolute bg-pink-500 bg-opacity-35 w-screen h-[200svh]"></div>
