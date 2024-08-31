@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { Canvas } from "@react-three/fiber"
-import { ScrollControls } from "@react-three/drei"
 import { useScroll, useMotionValueEvent, useTransform } from "framer-motion"
 import { ReactLenis } from "lenis/react"
 import Experience from "./components/Experience.jsx"
@@ -23,6 +22,7 @@ const App = () => {
     return (
         <ReactLenis root>
             <Canvas
+                onTouchMove={(e) => e.stopPropagation()}
                 className="!fixed !w-screen !h-svh"
                 camera={{
                     position: [0, 5, 100],
@@ -31,9 +31,7 @@ const App = () => {
                     far: 20000,
                 }}
             >
-                <ScrollControls>
-                    <Experience offset={offset} />
-                </ScrollControls>
+                <Experience offset={offset} />
             </Canvas>
             <Content
                 scrollYProgress={scrollYProgress}
