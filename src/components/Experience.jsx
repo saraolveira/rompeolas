@@ -32,8 +32,8 @@ const Experience = ({ offset }) => {
                 turbidity={0.1}
                 rayleigh={rayleigh}
             />
-            {/* <motion.group position={[0, 2 + offset * 600, 0]}> */}
-            <motion.group position={[0, 2, 7 - offset * 700]}>
+            <motion.group position={[0, 2 + offset * 600, 0]}>
+                {/* <motion.group position={[0, 2, 7 - offset * 700]}> */}
                 <Center top>
                     <Float speed={3} rotationIntensity={1.2}>
                         <Text3D
