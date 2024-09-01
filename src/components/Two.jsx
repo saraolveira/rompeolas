@@ -65,10 +65,9 @@ const Two = ({ totalY }) => {
                         // startOffset={100 - offset * 370 + "%"}
                         startOffset={97 - totalY / 20 + "%"}
                     >
-                        todavía noto el calor de mi
-                        piel,&nbsp;&nbsp;&nbsp;&nbsp; como si fuera
-                        ayer,&nbsp;&nbsp;&nbsp;&nbsp; en mi manera de
-                        ser,&nbsp;&nbsp;&nbsp;&nbsp; viendo como todo está a
+                        todavía noto el calor de mi piel&nbsp;&nbsp;&nbsp;&nbsp;
+                        como si fuera ayer&nbsp;&nbsp;&nbsp;&nbsp; en mi manera
+                        de ser&nbsp;&nbsp;&nbsp;&nbsp; viendo como todo está a
                         punto de torcer
                     </textPath>
                 </text>

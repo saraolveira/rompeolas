@@ -4,7 +4,7 @@ import { OrbitControls, Sky, Text3D, Center, Float } from "@react-three/drei"
 import { motion } from "framer-motion-3d"
 import Ocean from "./Ocean.jsx"
 
-const Experience = ({ offset }) => {
+const Experience = ({ offset, rompeolasColor, rompeolasOpacity }) => {
     const [sunPosition, setSunPosition] = useState([1500, 100, -1000])
     const [rayleigh, setRayleigh] = useState(0.3)
     const ocean = useRef()
@@ -32,8 +32,8 @@ const Experience = ({ offset }) => {
                 turbidity={0.1}
                 rayleigh={rayleigh}
             />
-            <motion.group position={[0, 2 + offset * 600, 0]}>
-                {/* <motion.group position={[0, 2, 7 - offset * 700]}> */}
+            {/* <motion.group position={[0, 2 + offset * 600, 0]}> */}
+            <motion.group position={[0, 2, 7 - offset * 700]}>
                 <Center top>
                     <Float speed={3} rotationIntensity={1.2}>
                         <Text3D
@@ -42,7 +42,11 @@ const Experience = ({ offset }) => {
                             height={2}
                         >
                             rompeolas
-                            <meshStandardMaterial color="#fec922" />
+                            <meshStandardMaterial
+                                color={rompeolasColor}
+                                transparent
+                                opacity={rompeolasOpacity}
+                            />
                         </Text3D>
                     </Float>
                 </Center>
