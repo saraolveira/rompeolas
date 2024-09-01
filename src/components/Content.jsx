@@ -3,12 +3,13 @@ import Two from "./Two.jsx"
 
 const Content = ({ scrollYProgress, offset, totalY }) => {
     return (
-        <div className="pointer-events-none">
+        <div className="md:pointer-events-none">
             <One scrollYProgress={scrollYProgress} />
-            <Two offset={offset} totalY={totalY} />
+            <Two totalY={totalY} />
+            <div className="bg-nepal-500 h-[1000svh]"></div>
             {/* <div className="top-[340svh] left-0 absolute bg-pink-500 bg-opacity-35 w-screen h-[200svh]"></div>
             <div className="h-[1000svh]"></div> */}
-            <div className="top-[350svh] left-0 absolute bg-pink-300 bg-opacity-10 w-screen h-[200svh]">
+            {/* <div className="top-[350svh] left-0 absolute bg-pink-300 bg-opacity-10 w-screen h-[200svh]">
                 <p>
                     Soy como una ola, no sé cuando pero voy a romperme Dime si
                     un día caigo en otra playa tú vendrías a verme Soy como una
@@ -31,7 +32,7 @@ const Content = ({ scrollYProgress, offset, totalY }) => {
                     Pero tengo ganas de saltar Me da miedo caer Es tan fácil
                     hacer que nada Parezca doler
                 </p>
-            </div>
+            </div> */}
         </div>
     )
 }
