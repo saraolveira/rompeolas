@@ -41,7 +41,7 @@ const Two = ({ totalY }) => {
 
     return (
         <div
-            className="top-[100svh] left-0 absolute w-screen h-[450svh] md:h-[250svh]"
+            className="top-[100svh] left-0 absolute w-screen h-[450vh] md:h-[250vh]"
             ref={container}
         >
             <svg
@@ -68,7 +68,7 @@ const Two = ({ totalY }) => {
                         todavía noto el calor de mi piel&nbsp;&nbsp;&nbsp;&nbsp;
                         como si fuera ayer&nbsp;&nbsp;&nbsp;&nbsp; en mi manera
                         de ser&nbsp;&nbsp;&nbsp;&nbsp; viendo como todo está a
-                        punto de torcer
+                        punto de torcer &nbsp;&nbsp;&nbsp;&nbsp;
                     </textPath>
                 </text>
             </svg>
