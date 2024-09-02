@@ -17,16 +17,13 @@ const Three = () => {
                 }}
                 className="right-0 bottom-0 fixed flex flex-col justify-center gap-8 w-screen h-screen"
             >
+                <div>pero tengo ganas de saltar</div>
                 <div>
-                    pero tengo ganas de <Flip isInView={isInView}>saltar</Flip>
+                    <Flip isInView={isInView}>
+                        me&nbsp; da&nbsp; miedo&nbsp; caer
+                    </Flip>
                 </div>
-                <div>
-                    me da miedo <Flip isInView={isInView}>caer</Flip>
-                </div>
-                <div>
-                    es tan fácil hacer que nada parezca
-                    <Flip isInView={isInView}>doler</Flip>
-                </div>
+                <div>es tan fácil hacer que nada parezca doler</div>
             </div>
         </div>
     )
@@ -34,7 +31,7 @@ const Three = () => {
 
 const Flip = ({ children, isInView }) => {
     return (
-        <motion.span className="block relative font-title text-5xl whitespace-nowrap overflow-hidden">
+        <motion.span className="block relative font-title text-4xl whitespace-nowrap overflow-hidden">
             <div>
                 {children.split("").map((l, i) => (
                     <motion.span
@@ -42,7 +39,7 @@ const Flip = ({ children, isInView }) => {
                         style={{
                             transform: isInView
                                 ? "translateY(0)"
-                                : "translateY(100%)",
+                                : "translateY(-100%)",
                             color: isInView ? "#fec922" : "#87480c",
                             transition: `all 0.5s ease-in-out ${0.1 * i}s`,
                         }}
@@ -57,7 +54,7 @@ const Flip = ({ children, isInView }) => {
                     <motion.span
                         style={{
                             transform: isInView
-                                ? "translateY(-100%)"
+                                ? "translateY(100%)"
                                 : "translateY(0)",
                             transition: `all 0.5s ease-in-out ${0.1 * i}s`,
                         }}
