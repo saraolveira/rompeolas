@@ -8,7 +8,7 @@ const Three = () => {
     return (
         <div
             ref={container}
-            className="top-[600vh] md:top-[450svh] left-0 absolute place-content-center gap-6 grid p-6 w-screen h-[screen] font-body text-3xl text-center text-supernova-400 italic"
+            className="place-content-center gap-6 grid mt-32 md:mt-96 p-6 w-screen h-[200vh] font-body text-3xl text-center text-supernova-400 italic"
         >
             <div
                 style={{

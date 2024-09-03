@@ -40,10 +40,7 @@ const Two = ({ totalY }) => {
     }
 
     return (
-        <div
-            className="top-[100svh] left-0 absolute w-screen h-[450vh] md:h-[250vh]"
-            ref={container}
-        >
+        <div className="w-screen h-[450vh] md:h-[250vh]" ref={container}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -59,7 +56,7 @@ const Two = ({ totalY }) => {
                     d="M.172 624.33s284.862 40.275 459.884 0c284.459-65.456 296.504-421.56 617.214-421.56 320.71 0 340.88 369.117 776.56 409.458"
                 ></path>
 
-                <text className="font-body text-5xl md:text-3xl fill-supernova-400">
+                <text className="font-body font-bold text-5xl md:text-3xl fill-supernova-400">
                     <textPath
                         href="#curve"
                         // startOffset={100 - offset * 370 + "%"}

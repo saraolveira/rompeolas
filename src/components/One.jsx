@@ -16,7 +16,7 @@ const One = ({ scrollYProgress }) => {
     )
 
     return (
-        <div className="top-0 left-0 absolute w-screen h-screen">
+        <div className="w-screen h-screen">
             <motion.svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 2183 1293"

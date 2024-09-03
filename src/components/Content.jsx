@@ -5,12 +5,12 @@ import Four from "./Four.jsx"
 
 const Content = ({ scrollYProgress, offset, totalY }) => {
     return (
-        <div className="md:pointer-events-none">
+        <div className="top-0 left-0 absolute md:pointer-events-none">
             <One scrollYProgress={scrollYProgress} />
             <Two totalY={totalY} />
             <Three />
             <Four />
-            <div className="bg-nepal-500 h-[2000svh]"></div>
+            <div className="bg-nepal-500 bg-opacity-55 mt-32 md:mt-96 h-[2000svh]"></div>
             {/* <div className="top-[340svh] left-0 absolute bg-pink-500 bg-opacity-35 w-screen h-[200svh]"></div>
             <div className="h-[1000svh]"></div> */}
             {/* <div className="top-[350svh] left-0 absolute bg-pink-300 bg-opacity-10 w-screen h-[200svh]">

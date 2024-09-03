@@ -44,10 +44,7 @@ const Four = () => {
     }
 
     return (
-        <div
-            className="top-[700vh] md:top-[550svh] left-0 absolute w-screen h-[200vh] md:h-[200vh]"
-            ref={container}
-        >
+        <div className="mt-32 md:mt-96 w-screen h-[200vh]" ref={container}>
             <video
                 autoPlay
                 loop
