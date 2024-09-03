@@ -3,7 +3,7 @@ import { useInView } from "framer-motion"
 import romepolasVid from "../assets/rompeolasStart.webm"
 import rompeolasMac from "../assets/rompeolasStart.mov"
 
-const Two = ({ totalY }) => {
+const Two = ({ totalY, supportsHEVCAlpha, ios }) => {
     const container = useRef(null)
     const isInView = useInView(container, { amount: 0.17 })
     // const isInView = useInView(container, {
@@ -13,31 +13,6 @@ const Two = ({ totalY }) => {
     // useEffect(() => {
     //     console.log("Element is in view: ", isInView)
     // }, [isInView])
-
-    const supportsHEVCAlpha = () => {
-        const navigator = window.navigator
-        const ua = navigator.userAgent.toLowerCase()
-        const hasMediaCapabilities = !!(
-            navigator.mediaCapabilities &&
-            navigator.mediaCapabilities.decodingInfo
-        )
-        const isSafari =
-            ua.indexOf("safari") != -1 &&
-            !(ua.indexOf("chrome") != -1) &&
-            ua.indexOf("version/") != -1
-        return isSafari && hasMediaCapabilities
-    }
-
-    const ios = () => {
-        if (typeof window === `undefined` || typeof navigator === `undefined`)
-            return false
-
-        return /iPhone|iPad|iPod/i.test(
-            navigator.userAgent ||
-                navigator.vendor ||
-                (window.opera && opera.toString() === `[object Opera]`)
-        )
-    }
 
     return (
         <div className="w-screen h-[450vh] md:h-[250vh]" ref={container}>

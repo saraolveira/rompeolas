@@ -4,12 +4,41 @@ import Three from "./Three.jsx"
 import Four from "./Four.jsx"
 
 const Content = ({ scrollYProgress, offset, totalY }) => {
+    const supportsHEVCAlpha = () => {
+        const navigator = window.navigator
+        const ua = navigator.userAgent.toLowerCase()
+        const hasMediaCapabilities = !!(
+            navigator.mediaCapabilities &&
+            navigator.mediaCapabilities.decodingInfo
+        )
+        const isSafari =
+            ua.indexOf("safari") != -1 &&
+            !(ua.indexOf("chrome") != -1) &&
+            ua.indexOf("version/") != -1
+        return isSafari && hasMediaCapabilities
+    }
+
+    const ios = () => {
+        if (typeof window === `undefined` || typeof navigator === `undefined`)
+            return false
+
+        return /iPhone|iPad|iPod/i.test(
+            navigator.userAgent ||
+                navigator.vendor ||
+                (window.opera && opera.toString() === `[object Opera]`)
+        )
+    }
+
     return (
         <div className="top-0 left-0 absolute md:pointer-events-none">
             <One scrollYProgress={scrollYProgress} />
-            <Two totalY={totalY} />
+            <Two
+                totalY={totalY}
+                supportsHEVCAlpha={supportsHEVCAlpha}
+                ios={ios}
+            />
             <Three />
-            <Four />
+            <Four supportsHEVCAlpha={supportsHEVCAlpha} ios={ios} />
             <div className="bg-nepal-500 bg-opacity-55 mt-32 md:mt-96 h-[2000svh]"></div>
             {/* <div className="top-[340svh] left-0 absolute bg-pink-500 bg-opacity-35 w-screen h-[200svh]"></div>
             <div className="h-[1000svh]"></div> */}
