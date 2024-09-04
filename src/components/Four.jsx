@@ -1,5 +1,9 @@
 import { useRef, useEffect } from "react"
 import { motion, useInView } from "framer-motion"
+import { Canvas } from "@react-three/fiber"
+import { OrbitControls } from "@react-three/drei"
+import { Environment } from "@react-three/drei"
+import Bird from "./Bird.jsx"
 import unPax from "../assets/1pax.mov"
 import dousPax from "../assets/2pax.mov"
 import paxPoint from "../assets/paxpoint.mov"
@@ -14,12 +18,36 @@ const Four = ({ supportsHEVCAlpha, ios }) => {
     //     margin: "0px 100px -200px 0px",
     // })
 
-    useEffect(() => {
-        console.log("Element is in view: ", isInView)
-    }, [isInView])
+    // useEffect(() => {
+    //     console.log("Element is in view: ", isInView)
+    // }, [isInView])
 
     return (
         <div className="mt-32 md:mt-96 w-screen h-[200vh]" ref={container}>
+            <Canvas
+                className="top-0 left-0 !fixed !w-screen !h-screen"
+                style={{
+                    opacity: isInView ? 1 : 0,
+                    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1)",
+                }}
+                camera={{
+                    position: [0, 5, 100],
+                    fov: 55,
+                    near: 1,
+                    far: 20000,
+                }}
+            >
+                <Bird />
+                {/* <ambientLight intensity={0.7} />
+                <directionalLight position={[0, 0, 10]} /> */}
+                <OrbitControls
+                    enablePan={false}
+                    enableZoom={false}
+                    minPolarAngle={Math.PI * 0.47}
+                    maxPolarAngle={Math.PI * 0.495}
+                />
+                <Environment preset="sunset" environmentIntensity={0.5} />
+            </Canvas>
             <div
                 style={{
                     opacity: isInView ? 1 : 0,
@@ -81,7 +109,7 @@ const Four = ({ supportsHEVCAlpha, ios }) => {
                     transition:
                         "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
                 }}
-                className="top-10 md:top-0 -right-10 md:right-64 fixed md:h-[80vh] pointer-events-none"
+                className="top-10 md:-top-20 -right-10 md:right-36 fixed md:h-[80vh] pointer-events-none"
             >
                 {ios() || supportsHEVCAlpha() ? (
                     <source src={dousPax} type="video/quicktime"></source>

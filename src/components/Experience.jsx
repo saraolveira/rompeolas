@@ -1,6 +1,13 @@
 import React, { useRef, useState } from "react"
 import { useFrame } from "@react-three/fiber"
-import { OrbitControls, Sky, Text3D, Center, Float } from "@react-three/drei"
+import {
+    OrbitControls,
+    Sky,
+    Text3D,
+    Center,
+    Float,
+    Environment,
+} from "@react-three/drei"
 import { motion } from "framer-motion-3d"
 import Ocean from "./Ocean.jsx"
 
@@ -23,8 +30,9 @@ const Experience = ({ offset, rompeolasColor, rompeolasOpacity }) => {
 
     return (
         <>
-            <ambientLight intensity={0.7} />
-            <directionalLight position={[0, 0, 10]} />
+            {/* <ambientLight intensity={0.7} />
+            <directionalLight position={[0, 0, 10]} /> */}
+            <Environment preset="sunset" environmentIntensity={0.7} />
             <Ocean ocean={ocean} offset={offset} />
             <Sky
                 scale={1000}
