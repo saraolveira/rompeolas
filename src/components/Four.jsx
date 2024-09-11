@@ -55,9 +55,11 @@ const Four = ({ supportsHEVCAlpha, ios }) => {
                 }}
                 className="top-0 right-0 fixed flex flex-col justify-center gap-2 w-screen h-screen font-body font-bold text-3xl text-center text-supernova-400"
             >
+                <div>soy como una ola</div>
+                <div className="italic">no sé cuando pero voy a romperme</div>
                 <div>dime si un día caigo en otra playa</div>
                 <Write isInView={isInView}>
-                    tu&nbsp; vendrías&nbsp; a&nbsp; verme
+                    tú&nbsp; vendrías&nbsp; a&nbsp; verme
                 </Write>
             </div>
 
