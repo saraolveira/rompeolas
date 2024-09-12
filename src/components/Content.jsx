@@ -41,7 +41,12 @@ const Content = ({ scrollYProgress, offset, totalY }) => {
             <Three supportsHEVCAlpha={supportsHEVCAlpha} ios={ios} />
             <Four supportsHEVCAlpha={supportsHEVCAlpha} ios={ios} />
             <Five />
-            <div className="bg-nepal-500 bg-opacity-55 mt-32 md:mt-96 h-[2000svh]"></div>
+            <div className="mt-32 md:mt-96 w-screen h-[230vh]"></div>
+            <div className="mt-32 md:mt-96 w-screen h-[200vh]"></div>
+            <div className="mt-32 md:mt-96 w-screen h-[200vh]"></div>
+            <div className="mt-32 md:mt-96 w-screen h-[200vh]"></div>
+            {/* 
+            <div className="bg-nepal-500 bg-opacity-55 mt-32 md:mt-96 h-[2000svh]"></div> */}
             {/* <div className="top-[340svh] left-0 absolute bg-pink-500 bg-opacity-35 w-screen h-[200svh]"></div>
             <div className="h-[1000svh]"></div> */}
             {/* <div className="top-[350svh] left-0 absolute bg-pink-300 bg-opacity-10 w-screen h-[200svh]">

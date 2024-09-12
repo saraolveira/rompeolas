@@ -28,6 +28,7 @@ const Four = ({ supportsHEVCAlpha, ios }) => {
                 className="top-0 left-0 !fixed !w-screen !h-screen"
                 style={{
                     opacity: isInView ? 1 : 0,
+                    pointerEvents: isInView ? "all" : "none",
                     transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1)",
                 }}
                 camera={{
@@ -53,10 +54,12 @@ const Four = ({ supportsHEVCAlpha, ios }) => {
                     opacity: isInView ? 1 : 0,
                     transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1)",
                 }}
-                className="top-0 right-0 fixed flex flex-col justify-center gap-2 w-screen h-screen font-body font-bold text-3xl text-center text-supernova-400"
+                className="top-0 right-0 fixed flex flex-col justify-center gap-2 p-2 w-screen h-screen font-body font-bold text-3xl text-center text-supernova-400"
             >
                 <div>soy como una ola</div>
-                <div className="italic">no sé cuando pero voy a romperme</div>
+                <div className="mb-20 md:mb-0 italic">
+                    no sé cuando pero voy a romperme
+                </div>
                 <div>dime si un día caigo en otra playa</div>
                 <Write isInView={isInView}>
                     tú&nbsp; vendrías&nbsp; a&nbsp; verme

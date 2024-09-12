@@ -17,6 +17,7 @@ const Five = () => {
                     opacity: isInView ? 1 : 0,
                     transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1)",
                     zIndex: isInView ? 10 : 0,
+                    pointerEvents: isInView ? "all" : "none",
                 }}
                 camera={{ position: [0, 0, 30], fov: 17.5, near: 10, far: 40 }}
             >
