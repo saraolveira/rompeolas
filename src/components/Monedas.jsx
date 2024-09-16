@@ -8,7 +8,7 @@ const Monedas = () => {
     return (
         <Physics timeStep="vary" gravity={[0, 0, 0]}>
             <Pointer />
-            {[...Array(30)].map((a, i) => (
+            {[...Array(40)].map((a, i) => (
                 <Moneda key={i} />
             ))}
         </Physics>
@@ -21,13 +21,15 @@ const Moneda = ({
 
     r = THREE.MathUtils.randFloatSpread,
 }) => {
-    const { scene } = useGLTF(
-        "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/coin/model.gltf"
-    )
+    // const { scene } = useGLTF(
+    //     "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/coin/model.gltf"
+    // )
 
-    const { nodes, materials } = useGLTF(
-        "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/coin/model.gltf"
-    )
+    // const { nodes, materials } = useGLTF(
+    //     "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/coin/model.gltf"
+    // )
+
+    const moneda = useGLTF("./moneda.glb")
 
     const api = useRef()
     const ref = useRef()
@@ -55,9 +57,11 @@ const Moneda = ({
                 ref={ref}
                 castShadow
                 receiveShadow
-                geometry={nodes.coin.geometry}
-                material={materials["Gold.009"]}
-                scale={1.5}
+                // geometry={nodes.coin.geometry}
+                // material={materials["Gold.009"]}
+                geometry={moneda.nodes["Cylinder"].geometry}
+                material={moneda.materials["Material.001"]}
+                scale={0.7}
             >
                 {/* <sphereGeometry args={[1, 64, 64]} scale={20} /> */}
             </mesh>
