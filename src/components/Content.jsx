@@ -4,6 +4,7 @@ import Three from "./Three.jsx"
 import Four from "./Four.jsx"
 import Five from "./Five.jsx"
 import Six from "./Six.jsx"
+import Seven from "./Seven.jsx"
 
 const Content = ({ scrollYProgress, offset, totalY }) => {
     const supportsHEVCAlpha = () => {
@@ -43,8 +44,11 @@ const Content = ({ scrollYProgress, offset, totalY }) => {
             <Four supportsHEVCAlpha={supportsHEVCAlpha} ios={ios} />
             <Five />
             <Six />
-            <div className="mt-32 md:mt-96 w-screen h-[200vh]"></div>
-            <div className="mt-32 md:mt-96 w-screen h-[200vh]"></div>
+            <Seven
+                totalY={totalY}
+                supportsHEVCAlpha={supportsHEVCAlpha}
+                ios={ios}
+            />
             <div className="mt-32 md:mt-96 w-screen h-[200vh]"></div>
             {/* 
             <div className="bg-nepal-500 bg-opacity-55 mt-32 md:mt-96 h-[2000svh]"></div> */}
