@@ -3,16 +3,9 @@ import { motion, useTransform } from "framer-motion"
 const One = ({ scrollYProgress }) => {
     const fillColor = useTransform(
         scrollYProgress,
-        [0, 0.04, 0.06, 0.5, 0.53, 0.7, 0.73],
-        [
-            "#fec922",
-            "#fec922",
-            "rgba(0,0,0,0)",
-            "rgba(0,0,0,0)",
-            "#fc2124",
-            "#fc2124",
-            "rgba(0,0,0,0)",
-        ]
+        // [0, 0.04, 0.06, 0.5, 0.53, 0.7, 0.73],
+        [0, 0.04, 0.06, 0.9, 0.93],
+        ["#fec922", "#fec922", "rgba(0,0,0,0)", "rgba(0,0,0,0)", "#fc2124"]
     )
 
     return (

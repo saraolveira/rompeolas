@@ -1,7 +1,8 @@
 import { useRef } from "react"
 import { useInView } from "framer-motion"
+import publico from "../assets/publico.mov"
 
-const Six = () => {
+const Six = ({ supportsHEVCAlpha, ios }) => {
     const container = useRef(null)
     const isInView = useInView(container, { amount: 0.17 })
 
@@ -12,7 +13,7 @@ const Six = () => {
                     opacity: isInView ? 1 : 0,
                     transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1)",
                 }}
-                className="top-0 right-0 fixed flex flex-col justify-center gap-2 p-2 w-screen h-screen font-body font-bold text-3xl text-center text-red-orange-500"
+                className="top-20 md:top-44 right-0 z-10 fixed flex flex-col justify-center gap-2 p-2 w-screen font-body font-bold text-3xl text-center text-red-orange-500"
             >
                 <div
                     style={{
@@ -37,6 +38,24 @@ const Six = () => {
                     cuando me despierte que sueño se va a cumplir
                 </div>
             </div>
+            <video
+                autoPlay
+                loop
+                playsInline
+                muted
+                style={{
+                    transform: isInView ? "none" : "translateY(200px)",
+                    opacity: isInView ? 1 : 0,
+                    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1)",
+                }}
+                className="bottom-0 md:-bottom-10 fixed md:h-[80vh] pointer-events-none"
+            >
+                {ios() || supportsHEVCAlpha() ? (
+                    <source src={publico} type="video/quicktime"></source>
+                ) : (
+                    <source src={publico} type="video/webm"></source>
+                )}
+            </video>
         </div>
     )
 }

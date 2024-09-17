@@ -43,7 +43,7 @@ const Content = ({ scrollYProgress, offset, totalY }) => {
             <Three supportsHEVCAlpha={supportsHEVCAlpha} ios={ios} />
             <Four supportsHEVCAlpha={supportsHEVCAlpha} ios={ios} />
             <Five />
-            <Six />
+            <Six supportsHEVCAlpha={supportsHEVCAlpha} ios={ios} />
             <Seven
                 totalY={totalY}
                 supportsHEVCAlpha={supportsHEVCAlpha}
