@@ -2,6 +2,7 @@ import { useRef } from "react"
 import { useInView } from "framer-motion"
 import publico from "../assets/publico.mov"
 import publicoW from "../assets/publico.webm"
+import jere from "../assets/jere.mov"
 
 const Six = ({ supportsHEVCAlpha, ios }) => {
     const container = useRef(null)
@@ -55,6 +56,24 @@ const Six = ({ supportsHEVCAlpha, ios }) => {
                     <source src={publico} type="video/quicktime"></source>
                 ) : (
                     <source src={publicoW} type="video/webm"></source>
+                )}
+            </video>
+            <video
+                autoPlay
+                loop
+                playsInline
+                muted
+                style={{
+                    transform: isInView ? "none" : "translateY(200px)",
+                    opacity: isInView ? 1 : 0,
+                    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1)",
+                }}
+                className="-right-24 bottom-0 md:-bottom-10 md:left-[25vw] fixed md:h-screen pointer-events-none"
+            >
+                {ios() || supportsHEVCAlpha() ? (
+                    <source src={jere} type="video/quicktime"></source>
+                ) : (
+                    <source src={jere} type="video/webm"></source>
                 )}
             </video>
         </div>
