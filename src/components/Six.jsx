@@ -1,6 +1,7 @@
 import { useRef } from "react"
 import { useInView } from "framer-motion"
 import publico from "../assets/publico.mov"
+import publicoW from "../assets/publico.webm"
 
 const Six = ({ supportsHEVCAlpha, ios }) => {
     const container = useRef(null)
@@ -53,7 +54,7 @@ const Six = ({ supportsHEVCAlpha, ios }) => {
                 {ios() || supportsHEVCAlpha() ? (
                     <source src={publico} type="video/quicktime"></source>
                 ) : (
-                    <source src={publico} type="video/webm"></source>
+                    <source src={publicoW} type="video/webm"></source>
                 )}
             </video>
         </div>
