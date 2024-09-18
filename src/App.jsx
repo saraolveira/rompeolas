@@ -52,8 +52,6 @@ const App = () => {
         setRompeolasOpacity(latest)
     })
 
-    console.log(progress)
-
     return (
         <ReactLenis root>
             <Canvas
