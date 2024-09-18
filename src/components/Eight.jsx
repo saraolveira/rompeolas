@@ -13,7 +13,7 @@ const Eight = () => {
                     opacity: isInView ? 1 : 0,
                     transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1)",
                 }}
-                className="flex justify-center items-center gap-4 border-2 p-4 border-red-orange-500 rounded-3xl md:w-2/6 h-1/4"
+                className="flex justify-center items-center gap-4 border-2 p-4 border-red-orange-500 rounded-3xl md:w-2/6 h-60"
             >
                 <img
                     src="/rompeolas.jpg"

@@ -3,6 +3,7 @@ import { useInView } from "framer-motion"
 import publico from "../assets/publico.mov"
 import publicoW from "../assets/publico.webm"
 import jere from "../assets/jere.mov"
+import jereW from "../assets/jere.webm"
 
 const Six = ({ supportsHEVCAlpha, ios }) => {
     const container = useRef(null)
@@ -73,7 +74,7 @@ const Six = ({ supportsHEVCAlpha, ios }) => {
                 {ios() || supportsHEVCAlpha() ? (
                     <source src={jere} type="video/quicktime"></source>
                 ) : (
-                    <source src={jere} type="video/webm"></source>
+                    <source src={jereW} type="video/webm"></source>
                 )}
             </video>
         </div>

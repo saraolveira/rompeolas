@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useState, Suspense } from "react"
 import { Canvas } from "@react-three/fiber"
 import { useScroll, useMotionValueEvent, useTransform } from "framer-motion"
 import { ReactLenis } from "lenis/react"
+import { useProgress } from "@react-three/drei"
 import Experience from "./components/Experience.jsx"
 import Content from "./components/Content.jsx"
 
@@ -13,6 +14,8 @@ const App = () => {
     const { scrollY } = useScroll()
     const [rompeolasColor, setRompeolasColor] = useState("#fec922")
     const [rompeolasOpacity, setRompeolasOpacity] = useState(1)
+
+    const { progress } = useProgress()
 
     const textColor = useTransform(
         scrollYProgress,
@@ -49,6 +52,8 @@ const App = () => {
         setRompeolasOpacity(latest)
     })
 
+    console.log(progress)
+
     return (
         <ReactLenis root>
             <Canvas
@@ -60,17 +65,35 @@ const App = () => {
                     far: 20000,
                 }}
             >
-                <Experience
-                    offset={offset}
-                    rompeolasColor={rompeolasColor}
-                    rompeolasOpacity={rompeolasOpacity}
-                />
+                <Suspense fallback={null}>
+                    <Experience
+                        offset={offset}
+                        rompeolasColor={rompeolasColor}
+                        rompeolasOpacity={rompeolasOpacity}
+                    />
+                </Suspense>
             </Canvas>
             <Content
                 scrollYProgress={scrollYProgress}
                 offset={offset}
                 totalY={totalY}
             />
+            <div
+                style={{
+                    display: progress < 100 ? "flex" : "none",
+                    transition: "all 0.9s ",
+                }}
+                className="z-40 fixed flex flex-col justify-center items-center gap-2 bg-nepal-500 w-screen h-screen font-body text-3xl text-center text-white"
+            >
+                <div
+                    style={{
+                        width: `${progress}%`,
+                        transition: "all 0.9s ",
+                    }}
+                    className="bg-white h-2"
+                ></div>
+                <p>rompeolas is loading</p>
+            </div>
         </ReactLenis>
     )
 }

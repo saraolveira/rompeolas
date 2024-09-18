@@ -1,6 +1,7 @@
 import { useRef } from "react"
 import { useInView } from "framer-motion"
 import aste from "../assets/aste.mov"
+import asteW from "../assets/aste.webm"
 
 const Seven = ({ totalY, supportsHEVCAlpha, ios }) => {
     const container = useRef(null)
@@ -102,7 +103,7 @@ const Seven = ({ totalY, supportsHEVCAlpha, ios }) => {
                 {ios() || supportsHEVCAlpha() ? (
                     <source src={aste} type="video/quicktime"></source>
                 ) : (
-                    <source src={aste} type="video/webm"></source>
+                    <source src={asteW} type="video/webm"></source>
                 )}
             </video>
         </div>
